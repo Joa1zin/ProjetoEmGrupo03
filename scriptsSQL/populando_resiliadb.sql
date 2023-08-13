@@ -24,9 +24,20 @@ INSERT INTO ResiliaDB.Enderecos(cep,cidade,bairro,rua,numero,complemento,estado,
         ('89012-345', 'Liberdade', 'Libertária', 'Praça da Liberdade', '555', 'n/a', 'Espírito Santo', 'Brasil')
         ('90123-456', 'Estrelado', 'Celesteville', 'Avenida das Estrelas', '666','casa', 'Santa Catarina', 'Brasil')
         ('01234-567', 'Harmonioso', 'Serenidade', 'Rua da Harmonia', '777', 'n/a', 'Amazonas', 'Brasil');
-<<<<<<< HEAD
 select * from Enderecos;
 -- mostra a tabela populada
+
+INSERT INTO ResiliaDB.Pessoas_facilitadoras(nome,nascimento,cpf,email,telefone,formacao,frente,id_endereco_fk)
+	VALUES
+    ('Matheus Pimentel', '1986-12-26', '53478291746','matheuspimentel@email.com','989746538', 'Psicologia UFPR', 'soft', '1'),
+    ('Karina Vitti', '1992-17-03', '71264982732', 'karinavitti@email.com', '923589238', 'Analise e desenvolvimento de sistemas UFPR', 'hard', '2');
+select * from Pessoas_facilitadoras;
+
+INSERT INTO ResiliaDB.Modulos(tema, qtd_horas, descricao, id_pessoa_facilitadora_fk)
+	VALUES
+    ('Aprender a aprender', '20', 'Modos de cada um aprender e paciência consigo', '1')
+    ('Lógica de programação', '40', 'Lógica de programação e orientação ao pensamento', '2');
+select * from modulos; 
 
 INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, status, id_turma_fk, id_endereco_fk, id_financas_aluno)
 	VALUES
@@ -51,3 +62,6 @@ INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, st
     ('Laura Carvalho', '2004-07-06', '90123456712', 'laura.carvalho@email.com', '(71) 87654-2109', 'Não', 'Ativo','19','19','19'),
     ('Rafaela Oliveira', '1997-10-19', '34567890123', 'rafaela.oliveira@email.com', '(81) 76543-3210', 'Não', 'Ativo','20','20','20');
 select * from Estudantes;
+
+
+INSERT INTO ResiliaDB.Financas_aluno(valor_total, forma_pagamento, status_pagamento, id_curso_fk)
