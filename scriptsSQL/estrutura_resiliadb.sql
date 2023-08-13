@@ -60,7 +60,7 @@ CREATE TABLE `Facilitadores_turma` (
   `id_facilitadores_turma` int UNIQUE PRIMARY KEY NOT NULL,
   `id_pessoa_facilitadora_fk` int NOT NULL,
   FOREIGN KEY (id_pessoa_facilitadora) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
-  `id_turmas_fk` int NOT NULL,
+  `id_turma_fk` int NOT NULL,
   FOREIGN KEY (id_turma) REFERENCES turmas(id_turma) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
@@ -71,7 +71,7 @@ CREATE TABLE `Pagamento_facilitadores` (
   `data_pagamento` date,
   `id_curso_fk` int NOT NULL,
   FOREIGN KEY (id_curso) REFERENCES cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE,
-  `id_pessoas_facilitadoras_fk` int NOT NULL,
+  `id_pessoa_facilitadora_fk` int NOT NULL,
   FOREIGN KEY (id_pessoa_facilitadora) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
 );
 

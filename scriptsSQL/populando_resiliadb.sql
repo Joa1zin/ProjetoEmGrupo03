@@ -39,6 +39,34 @@ INSERT INTO ResiliaDB.Modulos(tema, qtd_horas, descricao, id_pessoa_facilitadora
     ('Lógica de programação', '40', 'Lógica de programação e orientação ao pensamento', '2');
 select * from modulos; 
 
+INSERT INTO ResiliaDB.Cursos(nome,carga_horaria, preco, grade_curricular, id_modulos_fk)
+	VALUES
+    ('Analista de sistemas', '300', '16000', 'revisar', 'revisar');
+select * from Cursos;
+
+INSERT INTO ResiliaDB.Turmas(numero,periodo_aulas,data_inicio,data_termino, id_curso_fk)
+	VALUES
+    ('21', 'matutino', '2023-05-14','2023-11-19', '1');
+select * from modulos; 
+
+INSERT INTO ResiliaDB.Facilitadores_turma(id_pessoa_facilitadora_fk, id_turma_fk)
+	VALUES
+    ('1','1'),
+    ('2','1');
+select * from Facilitadores_turma;
+
+
+INSERT INTO ResiliaDB.Pagamento_facilitadores(valor_pagamento_modulo, qtd_modulos, data_pagamento, id_curso_fk, id_pessoa_facilitadora_fk)
+	VALUES
+    ('800', 'revisar', '2023-11-19', '1', '1'),
+    ('800', 'revisar', '2023-11-19', '1', '2');
+select*from Pagamento_facilitadores; 
+
+INSERT INTO ResiliaDB.Financas_aluno(valor_total,forma_pagamento, status_pagamento, id_curso_fk)
+	VALUES
+    ('16000', 'cartão crédito', 'em andamento', '1');
+select*from Financas_aluno; 
+
 INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, status, id_turma_fk, id_endereco_fk, id_financas_aluno)
 	VALUES
     ('Ana Silva', '1998-05-15', '12345678901', 'ana.silva@email.com', '(11) 98765-4321', 'Não', 'Ativo', '1', '1','1'),
@@ -62,6 +90,3 @@ INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, st
     ('Laura Carvalho', '2004-07-06', '90123456712', 'laura.carvalho@email.com', '(71) 87654-2109', 'Não', 'Ativo','19','19','19'),
     ('Rafaela Oliveira', '1997-10-19', '34567890123', 'rafaela.oliveira@email.com', '(81) 76543-3210', 'Não', 'Ativo','20','20','20');
 select * from Estudantes;
-
-
-INSERT INTO ResiliaDB.Financas_aluno(valor_total, forma_pagamento, status_pagamento, id_curso_fk)
