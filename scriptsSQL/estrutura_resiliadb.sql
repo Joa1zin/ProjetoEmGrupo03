@@ -30,7 +30,7 @@ CREATE TABLE `Pessoas_facilitadoras` (
 CREATE TABLE `Modulos` (
   `id_modulo` int UNIQUE PRIMARY KEY NOT NULL,
   `tema` varchar(50),
-  `qntd_horas` int,
+  `qtd_horas` int,
   `descricao` varchar(255),
   `id_pessoa_facilitadora_fk` int NOT NULL,
   FOREIGN KEY (id_pessoa_facilitadora) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
@@ -67,7 +67,7 @@ CREATE TABLE `Facilitadores_turma` (
 CREATE TABLE `Pagamento_facilitadores` (
   `id_pagamento_facilitador` int UNIQUE PRIMARY KEY NOT NULL,
   `valor_pagamento_modulo` int,
-  `qntd_modulos` int,
+  `qtd_modulos` int,
   `data_pagamento` date,
   `id_curso_fk` int NOT NULL,
   FOREIGN KEY (id_curso) REFERENCES cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE,
