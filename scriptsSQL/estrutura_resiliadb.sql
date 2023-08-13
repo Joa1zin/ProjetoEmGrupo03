@@ -3,7 +3,7 @@ CREATE DATABASE ResiliaDB;
 USE ResiliaDB;
 
 CREATE TABLE `enderecos` (
-  `id` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_enderecos` int UNIQUE PRIMARY KEY NOT NULL,
   `cep` bigint NOT NULL,
   `cidade` varchar(50) NOT NULL,
   `bairro` varchar(100) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `enderecos` (
 );
 
 CREATE TABLE `estudante` (
-  `id` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_estudante` int UNIQUE PRIMARY KEY NOT NULL,
   `nome` varchar(255),
   `nascimento` date,
   `cpf` varchar(11),
@@ -29,7 +29,7 @@ CREATE TABLE `estudante` (
 );
 
 CREATE TABLE `financas_aluno` (
-  `id` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_financas_aluno` int UNIQUE PRIMARY KEY NOT NULL,
   `valor_total` int,
   `forma_pagamento` varchar(25),
   `status_pagamento` varchar(50),
@@ -37,7 +37,7 @@ CREATE TABLE `financas_aluno` (
 );
 
 CREATE TABLE `pagamento_facilitadores` (
-  `id` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_pagamento_facilitadores` int UNIQUE PRIMARY KEY NOT NULL,
   `valor_pagamento_modulo` int,
   `qntd_modulos` int,
   `data_pagamento` date,
@@ -46,7 +46,7 @@ CREATE TABLE `pagamento_facilitadores` (
 );
 
 CREATE TABLE `estudante_curso` (
-  `id` int PRIMARY KEY NOT NULL,
+  `id_estudante_curso` int PRIMARY KEY NOT NULL,
   `data_matricula` date,
   `evasao` int,
   `ID_estudante_fk` int NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE `estudante_curso` (
 );
 
 CREATE TABLE `pessoas_facilitadoras` (
-  `id` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_pessoas_facilitadoras` int UNIQUE PRIMARY KEY NOT NULL,
   `nome` varchar(255),
   `nascimento` date,
   `cpf` varchar(11),
@@ -67,13 +67,13 @@ CREATE TABLE `pessoas_facilitadoras` (
 );
 
 CREATE TABLE `facilitadores_turma` (
-  `id` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_facilitadores_turma` int UNIQUE PRIMARY KEY NOT NULL,
   `ID_pessoas_facilitadoras_fk` int NOT NULL,
   `ID_turmas_fk` int NOT NULL
 );
 
 CREATE TABLE `turmas` (
-  `id` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_turmas` int UNIQUE PRIMARY KEY NOT NULL,
   `numero` int,
   `periodo_aulas` varchar(25),
   `data_inicio` date,
@@ -82,7 +82,7 @@ CREATE TABLE `turmas` (
 );
 
 CREATE TABLE `modulos` (
-  `id` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_modulos` int UNIQUE PRIMARY KEY NOT NULL,
   `tema` varchar(50),
   `qntd_horas` int,
   `descricao` varchar(255),
@@ -90,7 +90,7 @@ CREATE TABLE `modulos` (
 );
 
 CREATE TABLE `cursos` (
-  `id` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_cursos` int UNIQUE PRIMARY KEY NOT NULL,
   `nome` varchar(100),
   `carga_horaria` int,
   `preco` int,
