@@ -24,6 +24,7 @@ INSERT INTO ResiliaDB.Enderecos(cep,cidade,bairro,rua,numero,complemento,estado,
         ('89012-345', 'Liberdade', 'Libertária', 'Praça da Liberdade', '555', 'n/a', 'Espírito Santo', 'Brasil')
         ('90123-456', 'Estrelado', 'Celesteville', 'Avenida das Estrelas', '666','casa', 'Santa Catarina', 'Brasil')
         ('01234-567', 'Harmonioso', 'Serenidade', 'Rua da Harmonia', '777', 'n/a', 'Amazonas', 'Brasil');
+<<<<<<< HEAD
 select * from Enderecos;
 -- mostra a tabela populada
 
@@ -50,6 +51,3 @@ INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, st
     ('Laura Carvalho', '2004-07-06', '90123456712', 'laura.carvalho@email.com', '(71) 87654-2109', 'Não', 'Ativo','19','19','19'),
     ('Rafaela Oliveira', '1997-10-19', '34567890123', 'rafaela.oliveira@email.com', '(81) 76543-3210', 'Não', 'Ativo','20','20','20');
 select * from Estudantes;
-
-
-
