@@ -3,7 +3,7 @@ CREATE DATABASE ResiliaDB;
 USE ResiliaDB;
 
 CREATE TABLE `Enderecos` (
-  `id_endereco` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_endereco` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `cep` bigint NOT NULL,
   `cidade` varchar(50) NOT NULL,
   `bairro` varchar(100) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `Enderecos` (
 );
 
 CREATE TABLE `Pessoas_facilitadoras` (
-  `id_pessoa_facilitadora` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_pessoa_facilitadora` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(255),
   `nascimento` date,
   `cpf` varchar(11),
@@ -28,16 +28,16 @@ CREATE TABLE `Pessoas_facilitadoras` (
 );
 
 CREATE TABLE `Modulos` (
-  `id_modulo` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_modulo` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `tema` varchar(50),
   `qtd_horas` int,
   `descricao` varchar(255),
-  `id_pessoa_facilitadora_fk` int NOT NULL,
+  `id_pessoa_facilitadora_fk` int NOT NULL AUTO_INCREMENT,
   FOREIGN KEY (id_pessoa_facilitadora) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE `Cursos` (
-  `id_curso` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_curso` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(100),
   `carga_horaria` int,
   `preco` int,
@@ -47,7 +47,7 @@ CREATE TABLE `Cursos` (
 );
 
 CREATE TABLE `Turmas` (
-  `id_turma` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_turma` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `numero` int,
   `periodo_aulas` varchar(25),
   `data_inicio` date,
@@ -57,7 +57,7 @@ CREATE TABLE `Turmas` (
 );
 
 CREATE TABLE `Facilitadores_turma` (
-  `id_facilitadores_turma` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_facilitadores_turma` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `id_pessoa_facilitadora_fk` int NOT NULL,
   FOREIGN KEY (id_pessoa_facilitadora) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
   `id_turma_fk` int NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE `Facilitadores_turma` (
 );
 
 CREATE TABLE `Pagamento_facilitadores` (
-  `id_pagamento_facilitador` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_pagamento_facilitador` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `valor_pagamento_modulo` int,
   `qtd_modulos` int,
   `data_pagamento` date,
@@ -76,7 +76,7 @@ CREATE TABLE `Pagamento_facilitadores` (
 );
 
 CREATE TABLE `Financas_aluno` (
-  `id_financas_aluno` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_financas_aluno` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `valor_total` int,
   `forma_pagamento` varchar(25),
   `status_pagamento` varchar(50),
@@ -85,7 +85,7 @@ CREATE TABLE `Financas_aluno` (
 );
 
 CREATE TABLE `Estudantes` (
-  `id_estudante` int UNIQUE PRIMARY KEY NOT NULL,
+  `id_estudante` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(255),
   `nascimento` date,
   `cpf` varchar(11),
@@ -102,7 +102,7 @@ CREATE TABLE `Estudantes` (
 );
 
 CREATE TABLE `Estudante_curso` (
-  `id_estudante_curso` int PRIMARY KEY NOT NULL,
+  `id_estudante_curso` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `data_matricula` date,
   `evasao` int,
   `id_estudante_fk` int NOT NULL,
