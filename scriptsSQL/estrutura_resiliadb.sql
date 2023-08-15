@@ -61,8 +61,6 @@ CREATE TABLE `Turmas` (
   `periodo_aulas` varchar(25),
   `data_inicio` date,
   `data_termino` date,
-  `id_modulos_fk` int NOT NULL,
-  FOREIGN KEY (id_modulos_fk) REFERENCES modulos(id_modulos) ON UPDATE CASCADE ON DELETE CASCADE,
   `id_curso_fk` int NOT NULL,
   FOREIGN KEY (id_curso_fk) REFERENCES cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE
 );
