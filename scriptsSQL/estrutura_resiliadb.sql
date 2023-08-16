@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `Pessoas_facilitadoras` (
   `frente` varchar(25),
   `id_endereco_fk` int NOT NULL,
   
-  FOREIGN KEY (id_endereco_fk) REFERENCES enderecos(id_endereco) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (id_endereco_fk) REFERENCES Enderecos(id_endereco) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `Modulos` (
@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS `Modulos` (
   `id_pessoa_facilitadora_fk` int NOT NULL,
   `id_pessoa_facilitadora2_fk` int NOT NULL,
   
-  FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_pessoa_facilitadora2_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES Pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_pessoa_facilitadora2_fk) REFERENCES Pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `Cursos` (
@@ -53,10 +53,10 @@ CREATE TABLE IF NOT EXISTS `Curso_modulos` (
   `id_pessoa_facilitadora_fk` int NOT NULL,
   `id_pessoa_facilitadora2_fk` int NOT NULL,
   
-  FOREIGN KEY (id_cursos_fk) REFERENCES cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_modulos_fk) REFERENCES modulos(id_modulos) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_pessoa_facilitadora2_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (id_cursos_fk) REFERENCES Cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_modulos_fk) REFERENCES Modulos(id_modulos) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES Pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_pessoa_facilitadora2_fk) REFERENCES Pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `Turmas` (
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `Turmas` (
   `data_termino` date,
   `id_curso_fk` int NOT NULL,
   
-  FOREIGN KEY (id_curso_fk) REFERENCES cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (id_curso_fk) REFERENCES Cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `Facilitadores_turma` (
@@ -74,9 +74,9 @@ CREATE TABLE IF NOT EXISTS `Facilitadores_turma` (
   `id_pessoa_facilitadora2_fk` int NOT NULL,
   `id_turma_fk` int NOT NULL,
   
-  FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_pessoa_facilitadora2_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_turma_fk) REFERENCES turmas(id_turma) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES Pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_pessoa_facilitadora2_fk) REFERENCES Pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_turma_fk) REFERENCES Turmas(id_turma) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `Pagamento_facilitadores` (
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `Pagamento_facilitadores` (
   `data_pagamento` date,
   `id_pessoa_facilitadora_fk` int NOT NULL,
   
-  FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES Pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `Estudantes` (
@@ -101,8 +101,8 @@ CREATE TABLE IF NOT EXISTS `Estudantes` (
   `id_turma_fk` int NOT NULL,
   `id_endereco_fk` int NOT NULL,
   
-  FOREIGN KEY (id_turma_fk) REFERENCES turmas(id_turma) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_endereco_fk) REFERENCES enderecos(id_endereco) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (id_turma_fk) REFERENCES Turmas(id_turma) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_endereco_fk) REFERENCES Enderecos(id_endereco) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `Financas_estudante` (
@@ -113,8 +113,8 @@ CREATE TABLE IF NOT EXISTS `Financas_estudante` (
   `id_curso_fk` int NOT NULL,
   `id_estudante_fk` int NOT NULL,
   
-  FOREIGN KEY (id_curso_fk) REFERENCES cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_estudante_fk) REFERENCES estudantes(id_estudante) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (id_curso_fk) REFERENCES Cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_estudante_fk) REFERENCES Estudantes(id_estudante) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `Estudante_curso` (
@@ -124,9 +124,9 @@ CREATE TABLE IF NOT EXISTS `Estudante_curso` (
   `id_curso_fk` int NOT NULL,
   `id_turma_fk` int NOT NULL,
   
-  FOREIGN KEY (id_estudante_fk) REFERENCES estudantes(id_estudante) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_curso_fk) REFERENCES cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_turma_fk) REFERENCES turmas(id_turma) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (id_estudante_fk) REFERENCES Estudantes(id_estudante) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_curso_fk) REFERENCES Cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (id_turma_fk) REFERENCES Turmas(id_turma) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
