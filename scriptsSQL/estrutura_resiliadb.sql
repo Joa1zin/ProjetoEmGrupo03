@@ -4,7 +4,7 @@ USE ResiliaDB;
 
 CREATE TABLE `Enderecos` (
   `id_endereco` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `cep` bigint NOT NULL,
+  `cep` int NOT NULL,
   `cidade` varchar(50) NOT NULL,
   `bairro` varchar(100) NOT NULL,
   `rua` varchar(100) NOT NULL,
