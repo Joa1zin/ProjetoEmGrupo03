@@ -66,7 +66,28 @@ INSERT INTO ResiliaDB.Enderecos(cep,cidade,bairro,rua,numero,complemento,estado,
 	('82958394', 'Jardins', 'Santo', 'Rua da beleza', '767', 'ap 2345', 'SP', 'Brasil' ),
 	('89012345', 'Liberdade', 'Libertária', 'Praça da Liberdade', '555', 'n/a', 'ES', 'Brasil'),
 	('90123456', 'Estrelado', 'Celesteville', 'Avenida das Estrelas', '666','casa', 'SC', 'Brasil'),
-	('01234567', 'Harmonioso', 'Serenidade', 'Rua da Harmonia', '797', 'n/a', 'AM', 'Brasil');
+	('01234567', 'Harmonioso', 'Serenidade', 'Rua da Harmonia', '797', 'n/a', 'AM', 'Brasil'),
+    ('82348093', 'Curitiba' , 'Rebouças', 'Rua Chile', '2241', 'ap42', 'PR', 'Brasil'),
+    ('89574293', 'Pinhais', 'Jardim Amélia', 'Brigadeiro Franco', '32', 'casa', 'PR', 'Brasil'),
+    ('18320123', 'Joinville', 'Floresta', 'Rua Francisco', '46', 'casa', 'SC', 'Brasil'),
+    ('18320000', 'Apiaí', 'Jardim Sol Nascente', 'Rua Professora Maria da Glória', '53', 'casa', 'SP', 'Brasil'),
+    ('82104012', 'Joinville', 'Anitta Garibaldi', 'Rua Anitta Garibaldi', '1203', 'casa', 'SC', 'Brasil'),
+    ('23428987', 'Curitiba', 'Mercês', 'Rua Oscar Freire', '312', 'casa', 'PR', 'Brasil'),
+    ('23402393', 'Piraquara', 'Quitandinha', 'Rua Gonçala de Carvalho', '432', 'casa', 'PR', 'Brasil'),
+    ('42432434', 'Blumenau', 'Cerro Azul', 'Rua Barão de Itapitinha', '626', 'ap2', 'SC', 'Brasil'),
+    ('54834095', 'Toledo', 'Jardim Saira', 'Rua Avenida Atlântica', '54', 'casa', 'PR', 'Brasil'),
+    ('31231059', 'Cascavel', 'Vila Madalena', 'Rua Afonso Pena Cruz', '234', 'ap43', 'PR', 'Brasil'),
+    ('89468498', 'Iporanga', 'Palmital', 'Rua Monssenhor Cassesse', '12', 'n/a', 'SP', 'Brasil'),
+    ('84923482', 'Itaoca', 'Fazendinha', 'Rua Tapioca', '42', 'casa', 'SP', 'Brasil'),
+    ('98059683', 'Barra do Chapéu', 'Caximba', 'Rua XV de Novembro', '567', 'casa', 'SP', 'Brasil'),
+    ('82318912', 'Campo Largo', 'Jardim Rivamal', 'Postos de Caldas', '2342', 'casa', 'PR', 'Brasil'),
+    ('35348576', 'Ponta Grossa', 'Morro do Padre', 'Rua Alcides Ferraz', '583', 'ap76', 'PR', 'Brasil'),
+    ('84792347', 'Porto Alegre', 'Jardim Ipiranga', 'Rua Paulo Brificado', '654', 'casa', 'RS', 'Brasil'),
+    ('64564565', 'Campo Magro', 'São Brasil', 'Rua Pedro Pizatto', '756', 'n/a', 'PR', 'Brasil'),
+    ('87653234', 'Colombo', 'Pilarzinho', 'Rua Raquel Prado', '42', 'casa', 'PR', 'Brasil'),
+    ('89538754', 'Pelotas', 'Jardim Boarque', 'Rua Arapongas', '765', 'ap765', 'RS', 'Brasil'),
+    ('46749548', 'Americana', 'Centro', 'Rua Sherlock Rolmes', '4543', 'ap45', 'SP', 'Brasil'),
+    ('02394843', 'São Paulo', 'Brooklyn', 'Rua Romario', '54', 'casa', 'SP', 'Brasil');
 
  #inserindo pessoas facilitadoras na tabela 'Pessoas_facilitadoras'       
  INSERT INTO ResiliaDB.Pessoas_facilitadoras(nome,nascimento,cpf,email,telefone,formacao,frente,id_endereco_fk)
@@ -75,8 +96,8 @@ INSERT INTO ResiliaDB.Enderecos(cep,cidade,bairro,rua,numero,complemento,estado,
 	('Pedro Borges', '1972-11-03', '12500457831', 'pedro.borges@resilia.com', '(21) 90025-8748', 'Pedagogia UFRJ', 'Soft', '2'),
 	('Marcos Marx','1990-10-02','43812195015','vivamarx@hotmail.com','(15) 98666-5321','Bacharel em Ciências Sociais pela Unicamp','Soft','23'),
 	('Roberto Nascimento','1999-12-25','85163315048','codeiontem@gmail.com','(11) 98202-8755','Bacharel em Ciência da Computação pela USP','Hard','24'), 
-	('Matheus Pimentel', '1986-12-26', '53478291746','matheuspimentel@email.com','989746538', 'Psicologia UFPR', 'soft', '65'),
-	('Karina Vitti', '1992-11-03', '71264982732', 'karinavitti@email.com', '923589238', 'Analise e desenvolvimento de sistemas UFPR', 'hard', '66');
+	('Matheus Pimentel', '1986-12-26', '53478291746','matheuspimentel@email.com','989746538', 'Psicologia UFPR', 'Soft', '65'),
+	('Karina Vitti', '1992-11-03', '71264982732', 'karinavitti@email.com', '923589238', 'Analise e desenvolvimento de sistemas UFPR', 'Hard', '66');
 
 
 #inserindo módulos na tabela 'Modulos'
@@ -94,14 +115,18 @@ INSERT INTO ResiliaDB.Modulos(tema, qtd_horas, descricao, id_pessoa_facilitadora
 	('Módulo 5 - MongoDB, AWS, Ambiente de trabalho e Persistência', '84','Amazon AWS, MongoDB, Migrações, Adaptação ao ambiente de trabalho e Persistência','3','4'), 
 	('Módulo 1 - Lógica de programação', '100', 'Lógica de programação e orientação ao pensamento.', '5', '6'),
 	('Módulo 2 - Programação Orientada a Objetos', '100', 'Conceitos, classes, objetos, herança, polimorfismo, encapsulamento.', '5','6'),
-	('Módulo 3 - Segurança da Informação', '100', 'Segurança, criptografia, prevenção de ataques, proteção de dados', '5','6');
-       
+	('Módulo 3 - Segurança da Informação', '100', 'Segurança, criptografia, prevenção de ataques, proteção de dados', '5','6'),
+	('Módulo 1 - Sistema Operacional Linux e Versionamento', '80', 'Git, Comandos Shell, Técnicas de Versionamento', '1', '3'),
+    ('Módulo 2 - Redes e Conteinerização', '80', 'Infraestrutura de Redes e Docker', '1', '3'),
+    ('Módulo 3 - Provisionamento como código AWS', '80', 'Provisão e gerenciamento de serviços AWS', '4', '3'),
+    ('Módulo 4 - Engenharia de Software e Monitoramento de Infraestrutura', '80', 'Monitoramento de software/hardware e técnicas de engenharia de software.', '4', '3');
 #inserindo cursos na tabela 'Cursos'    
 INSERT INTO ResiliaDB.Cursos(nome,carga_horaria, preco)
 	VALUES
 	('Análise de Dados', '300', '9000'),
 	('Desenvolvedor Web FullStack JavaScript', '420', '12000'),
-	('Analista de sistemas', '300', '16000');
+	('Analista de sistemas', '300', '16000'),
+    ('DevOps', '320', '9999');
 
 #inserindo os módulos referentes aos cursos na tabela 'Curso_modulos'
 INSERT INTO ResiliaDB.Curso_modulos(id_cursos_fk,id_modulos_fk, id_pessoa_facilitadora_fk, id_pessoa_facilitadora2_fk)
@@ -118,23 +143,28 @@ INSERT INTO ResiliaDB.Curso_modulos(id_cursos_fk,id_modulos_fk, id_pessoa_facili
 	(2, 10, 3, 4),
 	(3, 11, 5, 6),
 	(3, 12, 5, 6),
-	(3, 13, 5, 6);
-
+	(3, 13, 5, 6),
+	(4, 14, 1, 3),
+	(4, 15, 1, 3),
+	(4, 16, 4, 3),
+	(4, 17, 4, 3);
 
 #inserindo turmas na tabela 'Turmas'
 INSERT INTO ResiliaDB.Turmas(periodo_aulas,data_inicio,data_termino, id_curso_fk)
 	VALUES
 	('Noturno', '2023-01-21','2023-07-14', '1'),
 	('Matutino','2023-01-20','2023-08-30', '2'),
-	('Matutino','2023-05-14','2023-11-17', '3');
-
+	('Matutino','2023-05-14','2023-11-17', '3'),
+	('Noturno','2023-05-01','2023-10-01', '4');
 
 #inserindo os facilitadores referentes às turmas na tabela 'Facilitadores_turma'
 INSERT INTO ResiliaDB.Facilitadores_turma(id_pessoa_facilitadora_fk, id_pessoa_facilitadora2_fk, id_turma_fk)
 	VALUES   
 		('1', '2', '1'),
 		('3', '4', '2'),
-		('5', '6', '3');
+		('5', '6', '3'),
+        ('1', '3', '4'), 
+        ('4', '3', '4');
 
 #inserindo pagamentos dos facilitadores na tabela 'Pagamento_facilitadores'
 INSERT INTO ResiliaDB.Pagamento_facilitadores(valor_pagamento_modulo, qtd_modulos, data_pagamento, id_pessoa_facilitadora_fk)
@@ -202,16 +232,41 @@ INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, st
 	('Camila Oliveira', '2004-03-28', '98701234534', 'camila.oliveira@email.com', '(31) 87654-2109', 'Não', 'Ativo','3','55'),
 	('Ricardo Martins', '2002-06-09', '23456789045', 'ricardo.martins@email.com', '(91) 76543-3210', 'Sim', 'Ativo','3','56'),
 	('Amanda Ferreira', '2001-09-22', '45678901256', 'amanda.ferreira@email.com', '(27) 87654-2109', 'Não', 'Ativo','3','57'),
-	('André Silva', '1998-05-01', '67890123467', 'andre.silva@email.com', '(21) 76543-3210', 'Não', 'Inativo','3','58'),
+	('André Silva', '1998-05-01', '67890123467', 'andre.silva@email.com', '(21) 76543-3210', 'Não', 'Inativo', '3', '58'),
 	('Beatriz Santos', '2005-08-14', '89012345678', 'beatriz.santos@email.com', '(41) 87654-2109', 'Sim', 'Ativo','3','59'),
 	('Guilherme Almeida', '2000-02-17', '23456789089', 'guilherme.almeida@email.com', '(31) 76543-3210', 'Não', 'Ativo','3','60'),
 	('Carolina Pereira', '1999-11-10', '67890123490', 'carolina.pereira@email.com', '(51) 87654-2109', 'Não', 'Inativo','3','61'),
 	('Thiago Rodrigues', '2003-04-23', '34567890101', 'thiago.rodrigues@email.com', '(22) 76543-3210', 'Sim', 'Ativo','3','62'),
 	('Laura Carvalho', '2004-07-06', '90123456712', 'laura.carvalho@email.com', '(71) 87654-2109', 'Não', 'Ativo','3','63'),
-	('Rafaela Oliveira', '1997-10-19', '34567890123', 'rafaela.oliveira@email.com', '(81) 76543-3210', 'Não', 'Ativo','3','64');
+	('Rafaela Oliveira', '1997-10-19', '34567890123', 'rafaela.oliveira@email.com', '(81) 76543-3210', 'Não', 'Ativo','3','64'),
+    ('João da Silva', '2000-01-15', '12345678900', 'node@js.com', '(11) 98765-4321', 'Não', 'Ativo', '4', '65'),
+	('Maria Oliveira', '2001-03-25', '98765432100', 'mariaoliv@gmail.com', '(21) 99876-5432', 'Não', 'Ativo', '4', '66'),
+    ('Pedro Santos', '2002-07-10', '23456789000', 'pedrao@gmail.com', '(31) 98765-1234', 'Não', 'Ativo', '4', '67'),
+	('Ana Pereira', '2001-11-20', '65432109800', 'perderneiras@gmail.com', '(41) 99876-5432', 'Não', 'Ativo', '4', '68'),
+	('Lucas Souza', '2000-09-05', '87654321000', 'soul.zaza@gmail.com', '(51) 98765-4321', 'Não', 'Ativo', '4', '69'),
+	('Mariana Fernandes', '2003-04-17', '01234567890', 'mafa@outlook.com', '(61) 99876-5432', 'Não', 'Ativo', '4', '70'),
+	('Sujiro Kemimame', '2001-02-03', '45678901200', 'sujiro@niconico.com', '(71) 98765-4321',  'Não', 'Ativo', '4', '71'),
+	('Amanda Côlon Trois', '2002-06-21', '89012345600', 'julia@doispontostres.com', '(81) 99876-5432', 'Sim', 'Ativo', '4', '72'),
+	('Elma Maria', '2000-12-09', '23456789000', 'euNAO@outlook.com', '(91) 98765-4321',  'Não', 'Inativo', '4', '73'),
+	('Larissa Manolela', '2003-03-14', '65432109800', 'cademeudinheiro@shein.com', '(11) 99876-5432',  'Não', 'Ativo', '4', '74'),
+	('Samueo Putz', '2004-04-29', '87654321000', 'putz@gmail.com', '(11) 98765-4321',  'Não', 'Ativo', '4', '75'),
+	('Dave Mustang', '1980-05-16', '01234567890', 'lucreia@megaDEATH.com', '(21) 99876-5432',  'Sim', 'Ativo', '4', '76'),
+    ('Ricardo Milos', '2000-01-15', '12345678900', 'ugot@that.com', '(11) 98765-4321', 'Não', 'Ativo', '4', '77'),
+	('Amanda Nunes', '2001-03-25', '98765432100', 'naoMANDO@nunes.com', '(41) 99876-5432',  'Não', 'Ativo', '4', '78'),
+	('Fernando D`Vila', '2002-07-10', '23456789000', 'melhor@professor.com', '(11) 98765-1234', 'Não', 'Ativo', '4', '79'),
+	('Kiko Cabreiro', '2001-11-20', '65432109800', 'top10@baixistas.com', '(16) 99876-5432',  'Não', 'Ativo', '4', '80'),
+	('Luizão', '2000-09-05', '87654321000', 'luiZAP@chama.com', '(11) 98765-4321',  'Não', 'Inativo', '4', '81'),
+	('Silvio Santos', '2003-04-17', '01234567890', 'podeficarcom@otroco.com', '(11) 99876-5432',  'Não', 'Ativo', '4', '82'),
+	('Thomas Turbinas', '2001-02-03', '45678901200', 'uma.maquina@.com', '(47) 98765-4321', 'Não', 'Ativo', '4', '83'),
+	('Julia Felicio da Silva', '2002-06-21', '89012345600', 'raluca@granola.com', '(47) 99876-5432',  'Sim', 'Inativo', '4', '84'),
+	('Michael Khabarovsk', '2000-12-09', '23456789000', 'heavy@tf2.com', '(47) 98765-4321',  'Não', 'Ativo', '4', '85');
+
+-- Lembrando que os detalhes como nomes, datas de nascimento, CPFs, e-mails, telefones, informações de PCD, status,
+-- IDs de turma e IDs de endereço são fictícios e podem ser ajustados de acordo com suas necessidades.
+
 
 #inserindo as finanças dos estudantes (pagamentos de valores do curso) na tabela 'Financas_estudantes'
- INSERT INTO Financas_estudante (valor_total, forma_pagamento, status_pagamento, id_curso_fk, id_estudante_fk)
+INSERT INTO Financas_estudante (valor_total, forma_pagamento, status_pagamento, id_curso_fk, id_estudante_fk)
 	VALUES
 	(9000, 'Cartão de Crédito', 'Pago', 1, 1),
 	(9000, 'Cartão de Crédito', 'Pago', 1, 2),
@@ -233,7 +288,7 @@ INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, st
 	(9000, 'Cartão de Crédito', 'Pago', 1, 18),
 	(9000, 'Boleto Bancário', 'Pago', 1, 19),
 	(8100, 'Cartão de Crédito', 'Pago', 1, 20),
-	(12000, 'Cartão de Crédito', 'Pago', 2, 21),
+    (12000, 'Cartão de Crédito', 'Pago', 2, 21),
 	(12000, 'Cartão de Crédito', 'Pago', 2, 22),
 	(12000, 'Pix', 'Pago', 2, 23),
 	(12000, 'Cartão de Crédito', 'Pago', 2, 24),
@@ -252,31 +307,50 @@ INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, st
 	(11000, 'Cartão de Crédito', 'Pago', 2, 37),
 	(12000, 'Cartão de Crédito', 'Pago', 2, 38),
 	(12000, 'Boleto Bancário', 'Pago', 2, 39),
-	(12000, 'Cartão de Crédito', 'Pago', 2, 40), 
-	('16000', 'cartão crédito', 'em andamento', 3, 41),
-	('16000', 'cartão débito', 'pago', 3, 42),
-	('16000', 'pix', 'pago', 3, 43),
-	('16000', 'cartão crédito', 'pago', 3 , 44),
-	('16000', 'cartão crédito', 'pago', 3 , 45),
-	('16000', 'cartão débito', 'pago', 3, 46),
-	('16000', 'cartão crédito', 'pago', 3, 47),
-	('16000', 'pix', 'pago', 3, 48),
-	('16000', 'cartão crédito', 'em andamento', 3, 49),
-	('16000', 'pix', 'pago', 3, 50),
-	('16000', 'cartão débito', 'pago', 3, 51),
-	('16000', 'cartão crédito', 'pago', 3, 52),
-	('16000', 'boleto', 'em andamento', 3, 53),
-	('16000', 'cartão débito', 'pago', 3, 54),
-	('16000', 'pix', 'pago', 3, 55),
-	('16000', 'cartão crédito', 'pago', 3, 56),
-	('16000', 'boleto', 'em andamento', 3, 57),
-	('16000', 'cartão crédito', 'pago', 3, 58),
-	('16000', 'cartão crédito', 'pago', 3, 59),
-	('16000', 'cartão débito', 'pago', 3, 60);
-
+	(12000, 'Cartão de Crédito', 'Pago', 2, 40),
+    (16000, 'Cartão Crédito', 'Em andamento', 3, 41),
+	(16000, 'Cartão Débito', 'Pago', 3, 42),
+	(16000, 'Pix', 'Pago', 3, 43),
+	(16000, 'Cartão Crédito', 'Pago', 3 , 44),
+	(16000, 'Cartão Crédito', 'Pago', 3 , 45),
+	(16000, 'Cartão Débito', 'Pago', 3, 46),
+	(16000, 'Cartão Crédito', 'Pago', 3, 47),
+	(16000, 'Pix', 'Pago', 3, 48),
+	(16000, 'Cartão Crédito', 'Em andamento', 3, 49),
+	(16000, 'Pix', 'Pago', 3, 50),
+	(16000, 'Cartão Débito', 'Pago', 3, 51),
+	(16000, 'Cartão Crédito', 'Pago', 3, 52),
+	(16000, 'Boleto Bancário', 'Em andamento', 3, 53),
+	(16000, 'Cartão Débito', 'Pago', 3, 54),
+	(16000, 'Pix', 'Pago', 3, 55),
+	(16000, 'Cartão Crédito', 'Pago', 3, 56),
+	(16000, 'Boleto Bancário', 'Em andamento', 3, 57),
+	(16000, 'Cartão Crédito', 'Pago', 3, 58),
+	(16000, 'Cartão Crédito', 'Pago', 3, 59),
+	(16000, 'Cartão Débito', 'Pago', 3, 60),
+	(9999, 'Pix', 'Pago', 4, 61),
+    (9999, 'Cartão Débito', 'Pago', 4, 62),
+    (9999, 'Cartão Crédito', 'Pago', 4, 63),
+    (9999, 'Cartão Débito', 'Pago', 4, 64),
+    (9999, 'Cartão Crédito', 'Pago', 4, 65),
+    (9999, 'Pix', 'Pago', 4, 66),
+    (9999, 'Cartão Débito', 'Pago', 4, 67),
+    (9999, 'Cartão Crédito', 'Pago', 4, 68),
+    (9999, 'Boleto Bancário', 'Pago', 4, 69),
+    (9999, 'Cartão Débito', 'Pago', 4, 70),
+    (9999, 'Boleto Bancário', 'Pago', 4, 71),
+    (9999, 'Cartão Débito', 'Pago', 4, 72),
+    (9999, 'Pix', 'Pago', 4, 73),
+    (9999, 'Cartão Débito', 'Pago', 4, 74),
+    (9999, 'Cartão Crédito', 'Pago', 4, 75),
+    (9999, 'Pix', 'Pago', 4, 76),
+    (9999, 'Cartão Débito', 'Pago', 4, 77),
+    (9999, 'Cartão Débito', 'Pago', 4, 78),
+    (9999, 'Cartão Crédito', 'Pago', 4, 79),
+    (9999, 'Cartão Débito', 'Pago', 4, 80);
 
 #inserindo os dados dos estudantes referentes ao curso na tabela 'Estudante_curso'
-  INSERT INTO Estudante_curso (data_matricula, evasao, id_estudante_fk, id_curso_fk, id_turma_fk)
+INSERT INTO Estudante_curso (data_matricula, evasao, id_estudante_fk, id_curso_fk, id_turma_fk)
 	VALUES
 	('2022-12-01', 0, 1, 1, 1),
 	('2022-12-05', 1, 2, 1, 1),
@@ -337,9 +411,20 @@ INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, st
 	('2023-03-18', 0, 57, 3, 3), 
 	('2023-03-19', 1, 58, 3, 3), 
 	('2023-03-13', 0, 59, 3, 3), 
-	('2023-03-13', 0, 60, 3, 3);
-
-
-
-
-
+	('2023-03-13', 0, 60, 3, 3),
+	('2023-06-13', 1, 66, 4, 4),
+    ('2023-06-13', 0, 67, 4, 4),
+    ('2023-06-13', 0, 68, 4, 4),
+    ('2023-06-13', 0, 69, 4, 4),
+    ('2023-06-13', 1, 70, 4, 4),
+    ('2023-06-13', 0, 71, 4, 4),
+    ('2023-06-13', 0, 71, 4, 4),
+    ('2023-06-13', 0, 72, 4, 4),
+    ('2023-06-13', 0, 73, 4, 4),
+    ('2023-06-13', 0, 74, 4, 4),
+    ('2023-06-13', 0, 75, 4, 4),
+    ('2023-06-13', 0, 76, 4, 4),
+    ('2023-06-13', 0, 77, 4, 4),
+    ('2023-06-13', 0, 78, 4, 4),
+    ('2023-06-13', 1, 79, 4, 4),
+    ('2023-06-13', 0, 80, 4, 4);
