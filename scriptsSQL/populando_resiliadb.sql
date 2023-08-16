@@ -86,8 +86,8 @@ INSERT INTO ResiliaDB.Enderecos(cep,cidade,bairro,rua,numero,complemento,estado,
 	('64564565', 'Campo Magro', 'São Brasil', 'Rua Pedro Pizatto', '756', 'n/a', 'PR', 'Brasil'),
 	('87653234', 'Colombo', 'Pilarzinho', 'Rua Raquel Prado', '42', 'casa', 'PR', 'Brasil'),
 	('89538754', 'Pelotas', 'Jardim Boarque', 'Rua Arapongas', '765', 'ap765', 'RS', 'Brasil'),
-	('46749548', 'Americana', 'Centro', 'Rua Sherlock Rolmes', '4543', 'ap45', 'SP', 'Brasil'),
-	('02394843', 'São Paulo', 'Brooklyn', 'Rua Romario', '54', 'casa', 'SP', 'Brasil');
+	('46749548', 'Americana', 'Centro', 'Rua Sherlock Rolmes', '4543', 'ap45', 'SP', 'Brasil');
+
 
  #inserindo pessoas facilitadoras na tabela 'Pessoas_facilitadoras'       
  INSERT INTO ResiliaDB.Pessoas_facilitadoras(nome,nascimento,cpf,email,telefone,formacao,frente,id_endereco_fk)
@@ -96,8 +96,8 @@ INSERT INTO ResiliaDB.Enderecos(cep,cidade,bairro,rua,numero,complemento,estado,
 	('Pedro Borges', '1972-11-03', '12500457831', 'pedro.borges@resilia.com', '(21) 90025-8748', 'Pedagogia UFRJ', 'Soft', '2'),
 	('Marcos Marx','1990-10-02','43812195015','vivamarx@hotmail.com','(15) 98666-5321','Bacharel em Ciências Sociais pela Unicamp','Soft','23'),
 	('Roberto Nascimento','1999-12-25','85163315048','codeiontem@gmail.com','(11) 98202-8755','Bacharel em Ciência da Computação pela USP','Hard','24'), 
-	('Matheus Pimentel', '1986-12-26', '53478291746','matheuspimentel@email.com','989746538', 'Psicologia UFPR', 'Soft', '65'),
-	('Karina Vitti', '1992-11-03', '71264982732', 'karinavitti@email.com', '923589238', 'Analise e desenvolvimento de sistemas UFPR', 'Hard', '66');
+	('Matheus Pimentel', '1986-12-26', '53478291746','matheuspimentel@email.com','989746538', 'Psicologia UFPR', 'Soft', '85'),
+	('Karina Vitti', '1992-11-03', '71264982732', 'karinavitti@email.com', '923589238', 'Analise e desenvolvimento de sistemas UFPR', 'Hard', '86');
 
 
 #inserindo módulos na tabela 'Modulos'
@@ -155,7 +155,7 @@ INSERT INTO ResiliaDB.Turmas(periodo_aulas,data_inicio,data_termino, id_curso_fk
 	('Noturno', '2023-01-21','2023-07-14', '1'),
 	('Matutino','2023-01-20','2023-08-30', '2'),
 	('Matutino','2023-05-14','2023-11-17', '3'),
-	('Noturno','2023-05-01','2023-10-01', '4');
+	('Noturno','2023-06-01','2023-12-31', '4');
 
 #inserindo os facilitadores referentes às turmas na tabela 'Facilitadores_turma'
 INSERT INTO ResiliaDB.Facilitadores_turma(id_pessoa_facilitadora_fk, id_pessoa_facilitadora2_fk, id_turma_fk)
@@ -163,8 +163,8 @@ INSERT INTO ResiliaDB.Facilitadores_turma(id_pessoa_facilitadora_fk, id_pessoa_f
 	('1', '2', '1'),
 	('3', '4', '2'),
 	('5', '6', '3'),
-        ('1', '3', '4'), 
-        ('4', '3', '4');
+	('1', '3', '4'), 
+	('4', '3', '4');
 
 #inserindo pagamentos dos facilitadores na tabela 'Pagamento_facilitadores'
 INSERT INTO ResiliaDB.Pagamento_facilitadores(valor_pagamento_modulo, qtd_modulos, data_pagamento, id_pessoa_facilitadora_fk)
@@ -258,8 +258,7 @@ INSERT INTO ResiliaDB.Estudantes(nome, nascimento, cpf, email, telefone, pcd, st
 	('Luizão', '2000-09-05', '87654321000', 'luiZAP@chama.com', '(11) 98765-4321',  'Não', 'Inativo', '4', '81'),
 	('Silvio Santos', '2003-04-17', '01234567890', 'podeficarcom@otroco.com', '(11) 99876-5432',  'Não', 'Ativo', '4', '82'),
 	('Thomas Turbinas', '2001-02-03', '45678901200', 'uma.maquina@.com', '(47) 98765-4321', 'Não', 'Ativo', '4', '83'),
-	('Julia Felicio da Silva', '2002-06-21', '89012345600', 'raluca@granola.com', '(47) 99876-5432',  'Sim', 'Inativo', '4', '84'),
-	('Michael Khabarovsk', '2000-12-09', '23456789000', 'heavy@tf2.com', '(47) 98765-4321',  'Não', 'Ativo', '4', '85');
+	('Julia Felicio da Silva', '2002-06-21', '89012345600', 'raluca@granola.com', '(47) 99876-5432',  'Sim', 'Inativo', '4', '84');
 
 -- Lembrando que os detalhes como nomes, datas de nascimento, CPFs, e-mails, telefones, informações de PCD, status,
 -- IDs de turma e IDs de endereço são fictícios e podem ser ajustados de acordo com suas necessidades.
@@ -412,19 +411,23 @@ INSERT INTO Estudante_curso (data_matricula, evasao, id_estudante_fk, id_curso_f
 	('2023-03-19', 1, 58, 3, 3), 
 	('2023-03-13', 0, 59, 3, 3), 
 	('2023-03-13', 0, 60, 3, 3),
-	('2023-06-13', 1, 66, 4, 4),
-	('2023-06-13', 0, 67, 4, 4),
-	('2023-06-13', 0, 68, 4, 4),
-	('2023-06-13', 0, 69, 4, 4),
-	('2023-06-13', 1, 70, 4, 4),
-	('2023-06-13', 0, 71, 4, 4),
-	('2023-06-13', 0, 71, 4, 4),
-	('2023-06-13', 0, 72, 4, 4),
-	('2023-06-13', 0, 73, 4, 4),
-	('2023-06-13', 0, 74, 4, 4),
-	('2023-06-13', 0, 75, 4, 4),
-	('2023-06-13', 0, 76, 4, 4),
-	('2023-06-13', 0, 77, 4, 4),
-	('2023-06-13', 0, 78, 4, 4),
-	('2023-06-13', 1, 79, 4, 4),
-	('2023-06-13', 0, 80, 4, 4);
+	('2023-05-15', 1, 61, 4, 4),
+	('2023-05-12', 0, 62, 4, 4),
+	('2023-05-03', 0, 63, 4, 4),
+	('2023-05-01', 0, 64, 4, 4),
+	('2023-05-02', 1, 65, 4, 4),
+	('2023-05-22', 0, 66, 4, 4),
+    ('2023-05-19', 0, 67, 4, 4),
+    ('2023-05-17', 1, 68, 4, 4),
+    ('2023-05-15', 0, 69, 4, 4),
+    ('2023-05-14', 1, 70, 4, 4),
+	('2023-05-13', 0, 71, 4, 4),
+	('2023-05-06', 0, 72, 4, 4),
+	('2023-05-07', 0, 73, 4, 4),
+	('2023-05-02', 0, 74, 4, 4),
+	('2023-05-05', 0, 75, 4, 4),
+	('2023-05-05', 0, 76, 4, 4),
+	('2023-05-12', 0, 77, 4, 4),
+	('2023-05-10', 0, 78, 4, 4),
+	('2023-05-19', 1, 79, 4, 4),
+	('2023-05-16', 0, 80, 4, 4);
