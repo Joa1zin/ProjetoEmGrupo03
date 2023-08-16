@@ -29,7 +29,7 @@ CREATE TABLE `Pessoas_facilitadoras` (
 
 CREATE TABLE `Modulos` (
   `id_modulos` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `tema` varchar(50),
+  `tema` varchar(255),
   `qtd_horas` int,
   `descricao` varchar(255),
   `id_pessoa_facilitadora_fk` int NOT NULL,
@@ -119,6 +119,8 @@ CREATE TABLE `Estudante_curso` (
   `id_turma_fk` int NOT NULL,
   FOREIGN KEY (id_turma_fk) REFERENCES turmas(id_turma) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+
 
 
 
