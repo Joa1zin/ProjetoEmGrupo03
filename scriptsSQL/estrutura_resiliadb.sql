@@ -1,8 +1,8 @@
-CREATE DATABASE ResiliaDB;
+CREATE DATABASE IF NOT EXISTS ResiliaDB;
 
 USE ResiliaDB;
 
-CREATE TABLE `Enderecos` (
+CREATE TABLE IF NOT EXISTS `Enderecos` (
   `id_endereco` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `cep` int NOT NULL,
   `cidade` varchar(50) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE `Enderecos` (
   `pais` varchar(50) NOT NULL
 );
 
-CREATE TABLE `Pessoas_facilitadoras` (
+CREATE TABLE IF NOT EXISTS `Pessoas_facilitadoras` (
   `id_pessoa_facilitadora` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(255),
   `nascimento` date,
@@ -27,7 +27,7 @@ CREATE TABLE `Pessoas_facilitadoras` (
   FOREIGN KEY (id_endereco_fk) REFERENCES enderecos(id_endereco) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE `Modulos` (
+CREATE TABLE IF NOT EXISTS `Modulos` (
   `id_modulos` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `tema` varchar(255),
   `qtd_horas` int,
@@ -38,14 +38,14 @@ CREATE TABLE `Modulos` (
   FOREIGN KEY (id_pessoa_facilitadora2_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE `Cursos` (
+CREATE TABLE IF NOT EXISTS `Cursos` (
   `id_curso` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(100),
   `carga_horaria` int,
   `preco` int
 );
 
-CREATE TABLE `Curso_modulos` (
+CREATE TABLE IF NOT EXISTS `Curso_modulos` (
 `id_cursos_fk` int NOT NULL,
 FOREIGN KEY (id_cursos_fk) REFERENCES cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE,
 `id_modulos_fk` int NOT NULL,
@@ -56,7 +56,7 @@ FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES pessoas_facilitadoras(id_pess
   FOREIGN KEY (id_pessoa_facilitadora2_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE `Turmas` (
+CREATE TABLE IF NOT EXISTS `Turmas` (
   `id_turma` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `periodo_aulas` varchar(25),
   `data_inicio` date,
@@ -65,7 +65,7 @@ CREATE TABLE `Turmas` (
   FOREIGN KEY (id_curso_fk) REFERENCES cursos(id_curso) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE `Facilitadores_turma` (
+CREATE TABLE IF NOT EXISTS `Facilitadores_turma` (
   `id_pessoa_facilitadora_fk` int NOT NULL,
   FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE,
   `id_pessoa_facilitadora2_fk` int NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE `Facilitadores_turma` (
   FOREIGN KEY (id_turma_fk) REFERENCES turmas(id_turma) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE `Pagamento_facilitadores` (
+CREATE TABLE IF NOT EXISTS `Pagamento_facilitadores` (
   `id_pagamento_facilitador` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `valor_pagamento_modulo` int,
   `qtd_modulos` int,
@@ -83,7 +83,7 @@ CREATE TABLE `Pagamento_facilitadores` (
   FOREIGN KEY (id_pessoa_facilitadora_fk) REFERENCES pessoas_facilitadoras(id_pessoa_facilitadora) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE `Estudantes` (
+CREATE TABLE IF NOT EXISTS `Estudantes` (
   `id_estudante` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(255),
   `nascimento` date,
@@ -98,7 +98,7 @@ CREATE TABLE `Estudantes` (
   FOREIGN KEY (id_endereco_fk) REFERENCES enderecos(id_endereco) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE `Financas_estudante` (
+CREATE TABLE IF NOT EXISTS `Financas_estudante` (
   `id_financas_estudante` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `valor_total` int,
   `forma_pagamento` varchar(25),
@@ -109,7 +109,7 @@ CREATE TABLE `Financas_estudante` (
   FOREIGN KEY (id_estudante_fk) REFERENCES estudantes(id_estudante) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE `Estudante_curso` (
+CREATE TABLE IF NOT EXISTS `Estudante_curso` (
   `data_matricula` date,
   `evasao` int,
   `id_estudante_fk` int NOT NULL,
