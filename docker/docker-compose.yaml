@@ -1,0 +1,7 @@
+version: "3.2"
+services:
+    mysql-server-db: 
+      container_name: database_conteiner
+      image: database_image
+      ports: 
+        - "3307:3306"
