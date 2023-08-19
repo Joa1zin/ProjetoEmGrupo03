@@ -26,16 +26,16 @@ O projeto de modernização do banco de dados da Resilia visa centralizar e otim
 
 ## 🐋Utilização pelo Docker:
 -Primeiramente, clone nosso repositório com o comando git:
-
 $ git clone https://github.com/samuelkutz/ResiliaDB.git
-Em seguida, abra a pasta do projeto no terminal/cmd
+
+-Em seguida, abra a pasta do projeto no terminal/cmd:
 $ cd ResiliaDB
 $ cd docker
 
 -Caso seu sistema tenha suporte, execute os seguintes comandos do makefile:
 $ make setup-compose
 
-- Ou execute os comandos do docker para gerar a imagem e container:
+-Ou execute os comandos do docker para gerar a imagem e container:
 $ docker build -t database_image ./
 $ docker-compose up
 
